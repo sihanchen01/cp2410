@@ -1,0 +1,168 @@
+\documentclass[10pt]{article}
+\title{CP2410 Practical 02}
+\author{Sihan Chen}
+\usepackage{listings, geometry, setspace, parskip}
+\newgeometry{vmargin={25mm},hmargin={30mm}}
+
+\begin{document}
+\maketitle
+
+\noindent \textbf{Question 1.}
+
+\doublespacing
+\noindent$2^{10}$ belongs to Constant Time, with complexity of $O(1)$;
+
+$2\log n$ belongs to Logarithmic Time, with complexity of $O(\log n)$;
+
+$4n$ belongs to Linear Time, with complexity of $O(n)$;
+
+$3n+100\log n$ belongs to Linear \& Logarithmic Time, with complexity of $O(n+\log n)$;
+
+$n\log n$ belongs to Quasilinear Time, with complexity of $O(n\log n)$;
+
+$4n\log n+2n$ belongs to Quasilinear \& Linear Time, with complexity of $O(n\log n+n)$;
+
+$n^2+10n$ belongs to Quadratic \& Linear Time, with complexity of $O(n^2+n)$;
+
+$n^3$ belongs to Cubic Time, with complexity of $O(n^3)$;
+
+$2^n$ belongs to Exponential Time, with complexity of $O(2^n)$;
+
+\begin{singlespace}
+So, the asymptotic growth rate order is:
+$$2^{10} < 2\log n < 4n < 3n+100\log n < n\log n < 4n\log n+2n < n^2+10n < n^3 < 2^n $$
+
+
+
+\noindent \textbf{Question 2.}
+
+
+\noindent For algorithm $A$ $(8n\log n)$ to be better than algorithm $B$ $(2n^2)$, it requires:
+$$8n\log n \le 2n^2$$
+divide $2n$ on both side, we got:
+$$4\log n \le n$$
+when $n=16$:
+$$4\log 16=4\times4=16$$
+so we know $n_0=16$, therefore for $n\ge 16$, algorithm $A$ is better than $B$.
+
+
+\pagebreak
+\noindent \textbf{Question 3.}
+
+
+Since $d(n)$ is $O(f(n))$, we know there is a constant $C_1$, and a positive integer $n_1$, so that:
+$$|d(n)|\le C_1\cdot f(n)$$ for all $n\ge n_1$.
+
+
+By multiplying $|a|$ to both sides, which gives us: $$|a|\cdot |d(n)| \le |a|\cdot C_1 \cdot f(n)$$ for all $n\ge n_1$.
+
+
+Let constant $C=|a|\cdot C_1$ and positive integer $n_0=n_1$, then we got:
+$$|a\cdot d(n)|\le C\cdot f(n)$$ for all $n\ge n_0$.
+
+
+Therefore, we know $a\cdot d(n)$ is $O(f(n))$, for any constant $a>0$.
+
+
+
+
+
+\noindent \textbf{Question 4.}
+
+
+\noindent Example 1
+
+\begin{lstlisting}
+def example1(S):
+	n = len(S)			# 1
+	total = 0			# 1
+	for j in range(n):		# n
+		total += S[j]		# 2n
+	return total			# 1
+\end{lstlisting}
+Total time complexity is $3n+3$, and Big-Oh is $O(n)$.
+
+
+\noindent Example 2
+
+\begin{lstlisting}
+def example2(S):
+	n = len(S)			# 1
+	total = 0			# 1
+	for j in range(0, n, 2):	# n/2
+		total += S[j]		# 2(n/2)
+	return total			# 1
+\end{lstlisting}
+Total time complexity is $\displaystyle \frac{3}{2}n+3$, and Big-Oh is $O(n)$.
+
+\pagebreak
+
+\noindent Example 3
+
+\begin{lstlisting}
+def example3(S):
+	n = len(S)			# 1
+	total = 0			# 1
+	for j in range(n):		# n
+		for k in range(1 + j):	# n(n+1)/2
+			total += S[k]	# 2(n(n+1)/2)
+	return total			# 1
+\end{lstlisting}
+Total time complexity is $\displaystyle \frac{3}{2}n^2+\frac{5}{2}n+3$, and Big-Oh is $O(n^2)$.
+
+
+\noindent Example 4
+
+\begin{lstlisting}
+def example4(S):
+	n = len(S)			# 1
+	prefix = 0			# 1
+	total = 0			# 1
+	for j in range(n):		# n
+		prefix += S[j]		# 2n
+		total += prefix		# n
+	return total			# 1
+\end{lstlisting}
+Total time complexity is $3n+4$, and Big-Oh is $O(n)$.
+
+
+\noindent Example 5
+
+\begin{lstlisting}
+def example5(A, B):
+	n = len(A)				# 1
+	count = 0				# 1
+	for i in range(n):			# n
+		total = 0			# n
+		for j in range(n):		# n^2
+			for k in range(1 + j):	# n*(n(n+1)/2)
+				total += A[k]	# 2(n*(n(n+1)/2))
+		if B[i] == total:		# 2n
+			count += 1		# n
+	return count				# 1
+\end{lstlisting}
+Total time complexity is $\displaystyle \frac{3}{2}n^3+\frac{3}{2}n^2+4n+3$, and Big-Oh is $O(n^3)$.
+
+
+\end{singlespace}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
