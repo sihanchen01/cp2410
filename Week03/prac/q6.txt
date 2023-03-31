@@ -1,0 +1,42 @@
+Resize factor: 2
+Average of 7.415 for n 10
+Resize factor: 3
+Average of 3.910 for n 10
+Resize factor: 4
+Average of 3.576 for n 10
+Resize factor: 2
+Average of 0.811 for n 100
+Resize factor: 3
+Average of 0.601 for n 100
+Resize factor: 4
+Average of 0.679 for n 100
+Resize factor: 2
+Average of 0.332 for n 1000
+Resize factor: 3
+Average of 0.271 for n 1000
+Resize factor: 4
+Average of 0.255 for n 1000
+Resize factor: 2
+Average of 0.396 for n 10000
+Resize factor: 3
+Average of 0.340 for n 10000
+Resize factor: 4
+Average of 0.296 for n 10000
+Resize factor: 2
+Average of 0.325 for n 100000
+Resize factor: 3
+Average of 0.315 for n 100000
+Resize factor: 4
+Average of 0.304 for n 100000
+Resize factor: 2
+Average of 0.279 for n 1000000
+Resize factor: 3
+Average of 0.284 for n 1000000
+Resize factor: 4
+Average of 0.206 for n 1000000
+Resize factor: 2
+Average of 0.345 for n 10000000
+Resize factor: 3
+Average of 0.282 for n 10000000
+Resize factor: 4
+Average of 0.242 for n 10000000
