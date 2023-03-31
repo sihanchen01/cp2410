@@ -31,3 +31,4 @@ def power(x, n):
   else:
     return x * power(x, n - 1)
 ```
+![Q2 image](./q2_image.png)
