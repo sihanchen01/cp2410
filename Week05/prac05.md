@@ -13,46 +13,44 @@ def find_second_to_last(head):
 Assuming we are given the head node of the singly linked list. We will use `prev` and `cur`, two pointers to iterate through singly linked list. 'prev' will be the node before 'cur', and when the while loop finishes, 'cur' will point at the last node and 'prev' will be the second to last node.
 
 ## Question 2
-```python
-def count_number_of_nodes(head):
-	node = head
-	seen = []
-	count = 0
-	while node not in seen:
-		count += 1
-		seen.append(node)
-		node = node._next
-	return count
-```
+To count number of nodes in a circular linked list, here is the code implementation:
+<img src="./images/q2_implementation.png" width="600px" />
+
+Here is the unit test:
+<img src="./images/q2_unittest_code.png" width="600px" />
+
+Running result of unit test:
+<img src="./images/q2_unittest_result.png" width="600px" />
+
+<div style="page-break-after: always;"></div>
 
 ## Question 3
 ```python
-def in_same_list(x, y):
-	cur = x
-	while cur != x:
-		if cur == y:
+def checkSameCircular(x, y) -> bool:
+	""" Return True if x and y belongs to the same circular linked list. """
+	current = x
+	while current.next != x:
+		if current == y:
 			return True
-		cur = cur._next
+		current = current.next
 	return False
 ```
+We start from x, and loop through the entire circular linked list by calling x.next(). During iteration, if we found y, means x and y are in the same list, return True. Else, since x is a node in circular linked list, if we come back to x, and never find y, means x and y are not in the same list, return False.
 
 ## Question 4
-```python
-from positional_list import PositionalList
-def list_to_positional_list(L: list):
-	positional_list = PositionalList()
-	for ele in L:
-		positional_list.add_last(ele)
-	return positional_list
-```
+Here is the implementated code for function `list_to_positional_list(L)` and its unittest:
+<img src="./images/q4_implementation_and_unittest_code.png" width="600px" />
+
+Running result of unit test:
+<img src="./images/q4_unittest_result.png" width="600px" />
+
 
 ## Question 5
-```python
-def find_max(P: PositionalList):
-	node = PositionalList.first()
-	result = float('-inf')
-	while node:
-		result = max(result, node._element)
-		node = node._next
-	return result
-```
+To find the maximum element in a positional list, here is the code implementation:
+<img src="./images/q5_implementation.png" width="600px" />
+
+Here is the unit test:
+<img src="./images/q5_unittest_code.png" width="600px" />
+
+Running result of unit test:
+<img src="./images/q5_unittest_result.png" width="600px" />
