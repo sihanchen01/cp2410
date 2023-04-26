@@ -21,16 +21,23 @@ h. The height of the tree is 4.
 ## Question 2
 a. the inorder traversal should look like this:
 
-<img src="./images/inorder.png" width="600px" />
+<img src="./images/inorder.png" width="300px" />
+
+<div style="page-break-after: always;"></div>
 
 b. the preorder traversal should look like this:
 
-<img src="./images/preorder.png" width="600px" />
+<img src="./images/preorder.png" width="300px" />
 
 c. the postorder traversal should look like this:
 
-<img src="./images/postorder.png" width="600px" />
+<img src="./images/postorder.png" width="300px" />
+
+<div style="page-break-after: always;"></div>
 
 ## Question 3
 Here is the screenshot of the linked binary tree and its three traverse methods implementation code:
-<img src="./images/q3.png" width='600px' />
+
+<img src="./images/q3.png" width='700px' />
+
+outputs are the same as my answer in [Q2](#question-2).
