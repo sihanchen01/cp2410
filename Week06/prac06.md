@@ -1,4 +1,4 @@
-# CP2410 Practical 05
+# CP2410 Practical 06
 ## Sihan Chen, jcu ID: 14187662
 
 ## Question 1
