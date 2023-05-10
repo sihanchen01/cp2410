@@ -2,7 +2,7 @@
 ## Sihan Chen, jcu ID: 14187662
 
 ## Question 1
-Hash function: $(3i+5) \% 11$
+Hash function: $h(i) = (3i+5) \mod 11$
 
 | Key | Hash Value |
 | --- | ---        |
@@ -64,6 +64,7 @@ the final hash table would look like this:
 <div style="page-break-after: always;"></div>
 
 ## Question 5
+With new hash function $h(k) = 3k \mod 17$
 
 | Key | Hash Value |
 | --- | ---        |
@@ -85,8 +86,8 @@ So, the new hash table would look like this:
 <div style="page-break-after: always;"></div>
 
 ## Question 6
-For each row of the matrix, we will split the row in middle, and keep doing the splitting while there are 0s in the left or 1s in the right (by checking last element in left and first element in right).
-If left's last element is 0, we call function recursively on left half, otherwise on right half.
+We can use the `binary search` technique to reduce search time on each row from $O(n)$ to $O(lg(n))$. For each row of the matrix, we will split the row in middle, and keep doing the splitting while there are 0s in the left or 1s in the right (by checking last element in left and first element in right).
+If the left's last element is 0, we call function recursively on left half, otherwise on the right half.
 And the base case is length of input list is 1.
 
 ```python
@@ -116,7 +117,7 @@ def count_ones_in_row(row:list[int]) -> int:
         return len(left)
 ```
 
-And here we can see the result appears to be correct on test input:
+This way, we can achieve time complexity of $O(n*lg(n))$.And here we can see the result appears to be correct on test input:
 
 <img src="./images/q6.png" width="600px" />
 
@@ -125,23 +126,3 @@ And here we can see the result appears to be correct on test input:
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
