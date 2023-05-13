@@ -4,7 +4,7 @@
 ## Question 1
 The `merge-sort` will always take $O(n\times lg(n))$ time. 
 
-The `quick-sort` will expected (on average) to have time complexity of $\Theta (n\times lg(n))$, while the worst case time complexity is $O(n^2)$.
+And since the sequence only contains 0s and 1s, using `quick-sort` with either 0 or 1 as pivot will only require to iterate sequence once, and the time complexity is $O(n)$.
 
 
 ## Question 2
@@ -32,7 +32,7 @@ Here is a screenshot from testing the code:
 <div style="page-break-after: always;"></div>
 
 ## Question 3
-Here is an in-place method of sorting all 0s before 1s.
+Here is an in-place method of sorting all 0s before 1s, we will use two pointers `i` and `j`, starting at index of 0 and n-1, keep swaping 1s and 0s until two pointers cross each other.
 ``` python
 def in_place_sort(A: list[int]) -> list:
     """ Sort all 0s before 1s in place. """
@@ -62,7 +62,7 @@ Here is a screenshot from testing the code:
 <div style="page-break-after: always;"></div>
 
 ## Question 4
-To achieve time complexity of $O(n\times log(n))$, we can do a merge-sort on the sequence S. Then loop through the sorted array to find the most common element.
+To achieve time complexity of $O(n\times log(n))$, we will first do a merge-sort on the sequence S. Then loop through the sorted array to find the most frequent element.
 ```python
 def find_winner(S:list[int]) -> int:
     """ Return the most frequent int, which represents a candidate. """
@@ -118,7 +118,7 @@ Here is a screenshot from testing the code:
 
 
 ## Question 5
-To achieve time complexity of $O(n)$, we can use dictionary (hash table) to track votes:
+To achieve time complexity of $O(n)$, we can use hash table(dictionary) to track votes as the python `max` method also has time complexity of $O(n)$:
 
 ```python
 def find_election_winner(S: list[str]) -> str:
